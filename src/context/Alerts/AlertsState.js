@@ -14,9 +14,8 @@ const AlertsState = (props) => {
     const [state, dispatch] = useReducer(AlertsReducer, initialState);
 
     const getAlerts = () => {
-            return axios.get('http://localhost:5000/alerts?offset=2&limit=20').then((res) => {
-                let { data } = res
-                console.log(data)
+            return axios.get('http://localhost:5000/alerts?offset=0&limit=100').then((res) => {
+                let { data } = res.data
                 dispatch({ type: GET_ALERTS, alerts: data})
             }).catch(err =>{
                 console.log(err)

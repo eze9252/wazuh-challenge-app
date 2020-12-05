@@ -1,15 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import AlertsSatate from './context/Alerts/AlertsState';
+import AlertsContainer from './containers/alerts';
+import AgentsContainer from './containers/agents';
+import RulesContainer from './containers/rules';
+import AlertsState from './context/Alerts/AlertsState';
+import AgentsState from './context/Agents/AgentsState';
+import RulesState from './context/Rules/RulesState';
 import reportWebVitals from './reportWebVitals';
+import createStoreProvider from './store';
+import { Router, Route } from 'react-router';
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
+
+
+const StoreProvider = createStoreProvider([
+    AlertsState,
+    AgentsState,
+    RulesState,
+]);
 
 ReactDOM.render(
   <React.StrictMode>
-    <AlertsSatate>
-      <App />
-    </AlertsSatate>
+    <StoreProvider>
+      <Router history={history}>
+              <Route exact path="/" component={AlertsContainer} />
+              <Route exact path="/agents" component={AgentsContainer} />
+              <Route exact path="/rules" component={RulesContainer} />
+      </Router>
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
