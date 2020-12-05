@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import AlertsContainer from './containers/alerts';
+import AlertsContainerDetail from './containers/alerts/details';
 import AgentsContainer from './containers/agents';
+import AgentsContainerDetail from './containers/agents/details';
 import RulesContainer from './containers/rules';
+import RulesContainerDetail from './containers/rules/details';
+import Dashboard from './containers//dashboard';
 import AlertsState from './context/Alerts/AlertsState';
 import AgentsState from './context/Agents/AgentsState';
 import RulesState from './context/Rules/RulesState';
@@ -25,8 +29,12 @@ ReactDOM.render(
     <StoreProvider>
       <Router history={history}>
               <Route exact path="/" component={AlertsContainer} />
+              <Route exact path="/alert/:id" component={AlertsContainerDetail} />
               <Route exact path="/agents" component={AgentsContainer} />
+              <Route exact path="/agents/:id" component={AgentsContainerDetail} />
               <Route exact path="/rules" component={RulesContainer} />
+              <Route exact path="/rules/:id" component={RulesContainerDetail} />
+              <Route exact path="/dashboard" component={Dashboard} />
       </Router>
     </StoreProvider>
   </React.StrictMode>,

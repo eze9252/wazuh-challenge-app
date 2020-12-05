@@ -132,7 +132,7 @@ export default function AgentsTable(props) {
                   return (
                     <TableRow
                       hover
-                      onClick={() => handleOnClick(`/agents/${row.id}`)}
+                      onClick={() => handleOnClick( window.location = `/agents/${row.id}`)}
                       tabIndex={-1}
                       key={row.id}
                       selected={false}>

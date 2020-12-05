@@ -4,11 +4,12 @@ import axios from 'axios';
 import AgentsContext from "./AgentsContext";
 import AgentsReducer from "./AgentsReducer";
 
-import { GET_AGENTS } from '../types'
+import { GET_AGENTS, GET_AGENTS_BY_ID } from '../types'
 
 const AgentsState = (props) => {
     let initialState = {
         agents: [],
+        agent: {},
     }
 
     const [state, dispatch] = useReducer(AgentsReducer, initialState);
@@ -22,8 +23,17 @@ const AgentsState = (props) => {
             })  
     }
 
+    const getAgentsById = (id) => {
+        return axios.get('http://localhost:5000/agents/'+id).then((res) => {
+            let { data } = res
+            dispatch({ type: GET_AGENTS_BY_ID, agent: data})
+        }).catch(err =>{
+            console.log(err)
+        })  
+    }
+
     return(
-        <AgentsContext.Provider value={{agents: state.agents ,getAgents}}>
+        <AgentsContext.Provider value={{agents: state.agents, agent: state.agent ,getAgents, getAgentsById}}>
             {props.children}
         </AgentsContext.Provider>
     )

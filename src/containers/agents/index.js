@@ -12,7 +12,6 @@ const Agents = () => {
     AgentsContext.getAgents();
   },[])
   
-  console.log(AgentsContext.agents)
   return (
     <div className="App">
       <header>

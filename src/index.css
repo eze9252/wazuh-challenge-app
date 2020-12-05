@@ -16,3 +16,36 @@ code {
   margin: 0 10%;
   padding-top: 50px;
 }
+
+.logo{
+  width: 10%;
+  position: absolute;
+  left: 10px;
+  top: 10px; 
+}
+
+.MuiTableContainer-root{
+  width: 100%;
+  border: grey;
+  border: 1px solid rgba(224, 224, 224, 1);
+  overflow-x: auto;
+}
+
+.MuiTab-textColorPrimary.Mui-selected {
+  color: #00A9E5 !important;
+}
+
+.PrivateTabIndicator-colorPrimary-3 {
+  background-color: #00A9E5 !important;
+}
+
+.MuiTableCell-head {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+  background-color: rgba(224, 224, 224, 1);
+  line-height: 1.5rem;
+}
+
+.container-card {
+  padding: 50px;
+}

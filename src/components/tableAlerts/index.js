@@ -132,7 +132,7 @@ export default function AlertsTable(props) {
                   return (
                     <TableRow
                       hover
-                      onClick={() => handleOnClick(`/alert/${row._id}`)}
+                      onClick={() => handleOnClick( window.location = `/alert/${row._id}`)}
                       tabIndex={-1}
                       key={row._id}
                       selected={false}>

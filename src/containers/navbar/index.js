@@ -17,6 +17,10 @@ const NavBar = (props) => {
   return (
     <>
       <Paper className={classes.root}>
+        <img
+          className="logo"
+          src="https://wazuh.com/wp-content/themes/wazuh/assets/images/wazuh_logo.svg"
+        />
         <Tabs
           value={props.value}
           indicatorColor="primary"
