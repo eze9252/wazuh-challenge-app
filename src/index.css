@@ -47,5 +47,12 @@ code {
 }
 
 .container-card {
-  padding: 50px;
+  margin: 0 30%;
+  padding-top: 50px;
+}
+
+.container-card .MuiCard-root {
+  padding: 30px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.12);
 }

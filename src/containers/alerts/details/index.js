@@ -23,7 +23,7 @@ const AlertDetail = (props) => {
         { Object.keys(AlertsContext.alert).length != 0 ? <Card variant="outlined">
           <CardContent>
             <Typography variant="h5" component="h2" gutterBottom>
-              Details of Alert {}
+              Details of Alert: {AlertsContext.alert._id}
             </Typography>
             <Typography color="textSecondary">
               Index: {AlertsContext.alert._index}
@@ -35,8 +35,7 @@ const AlertDetail = (props) => {
               Type: {AlertsContext.alert._type}
             </Typography>
             <Typography  color="textSecondary">
-              Agent name: {AlertsContext.alert._source.agent.name} - Id:{' '}
-              {AlertsContext.alert._source.agent.id}
+              Agent name: {AlertsContext.alert._source.agent.name}
             </Typography>
             <Typography  color="textSecondary">
               Cluster: {AlertsContext.alert._source.cluster.name}
@@ -45,8 +44,7 @@ const AlertDetail = (props) => {
               Manager: {AlertsContext.alert._source.manager.name}
             </Typography>
             <Typography color="textSecondary">
-              Rule: {AlertsContext.alert._source.rule.description} - Id:{' '}
-              {AlertsContext.alert._source.rule.id}
+              Rule: {AlertsContext.alert._source.rule.description}
             </Typography>
           </CardContent>
           <CardActions>
