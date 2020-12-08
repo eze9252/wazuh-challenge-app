@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import AlertsTable from './index';
+import CardAlerts from './index';
 
-describe('Test Render Table Alerts', () => {
+describe('Test Render Card details Alerts', () => {
 
-  const data = [
-    {
+  const data = {
+    alert : {
       "_index": "wazuh-alerts-4.x-sample-security",
       "_type": "_doc",
       "_id": "4HGmr3QB4YtWQbLv1inX",
@@ -38,7 +38,8 @@ describe('Test Render Table Alerts', () => {
           ],
           "gdpr": [
             "II_5.1.f"
-          ]
+          ],
+          "total_alerts": 36
         },
         "agent": {
           "id": "007",
@@ -101,10 +102,10 @@ describe('Test Render Table Alerts', () => {
         }
       }
     }
-  ]
+  }
 
-  test('snapshot alerts renders', () => {
-    const component = renderer.create(<AlertsTable alerts={data} />);
+  test('snapshot table renders', () => {
+    const component = renderer.create(<CardAlerts alert_details={data} />);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -1,20 +1,20 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import AgentsTable from './index';
+import CardAgents from './index';
 
-describe('Test Render Table Agents', () => {
+describe('Test Render Card details Agents', () => {
 
-  const data = [
-    {
+  const data = {
+    agent : {
       "id": "007",
       "name": "Ubuntu",
       "ip": "47.204.15.21",
       "total_alerts": 12
     }
-  ]
+  }
 
   test('snapshot table renders', () => {
-    const component = renderer.create(<AgentsTable agents={data} />);
+    const component = renderer.create(<CardAgents agent_details={data} />);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
